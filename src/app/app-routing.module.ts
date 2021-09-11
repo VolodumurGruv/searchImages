@@ -9,8 +9,22 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        redirectTo: '/',
+        pathMatch: 'full',
+      },
+      {
+        path: '',
         loadChildren: () =>
           import('./main-page/main-page.module').then((m) => m.MainPageModule),
+      },
+      {
+        path: 'bookmarks',
+        loadChildren: () =>
+          import('./bookmarks/bookmarks.module').then((m) => m.BookmarksModule),
+      },
+      {
+        path: '**',
+        redirectTo: '/',
       },
     ],
   },

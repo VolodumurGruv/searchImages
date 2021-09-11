@@ -9,4 +9,5 @@ export interface Image {
 export interface Images {
   title: string;
   url: string;
+  tag?: string;
 }

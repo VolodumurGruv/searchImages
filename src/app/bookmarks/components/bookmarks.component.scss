@@ -6,19 +6,15 @@
   flex-wrap: wrap-reverse;
   width: 100%;
 }
-
-.search {
-  margin: 70px auto 5px 30px;
-}
-
 .example-card {
-  max-width: 250px;
+  max-width: 400px;
   margin-bottom: 8px;
 }
 
-.images {
+.card-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  margin-top: 70px;
 }

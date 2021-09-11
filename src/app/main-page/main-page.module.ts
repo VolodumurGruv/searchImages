@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [MainPageComponent],
@@ -21,6 +22,7 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class MainPageModule {}

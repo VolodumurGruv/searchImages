@@ -15,7 +15,7 @@ export class FlickrService {
   search(keyword: string): Observable<Image[]> {
     const URL: string =
       'https://www.flickr.com/services/rest/?method=flickr.photos.search&';
-    const params = `api_key=${environment.flickr.key}&text=${keyword}&format=json&nojsoncallback=1&per_page=12`;
+    const params = `api_key=${environment.flickr.key}&text=${keyword}&format=json&nojsoncallback=1&per_page=24`;
 
     return this.http.get<Image>(URL + params).pipe(
       map((res: Image) => {
