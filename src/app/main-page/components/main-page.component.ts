@@ -76,6 +76,5 @@ export class MainPageComponent implements OnInit {
       index++;
       return index > startingIndex && index <= endingIndex ? true : false;
     });
-    console.log(this.data);
   }
 }

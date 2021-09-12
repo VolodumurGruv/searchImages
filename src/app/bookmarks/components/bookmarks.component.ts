@@ -15,10 +15,6 @@ export class BookmarksComponent implements OnInit {
     const b = localStorage.getItem('data');
     if (b !== null) {
       this.images = JSON.parse(b);
-
-      for (const image of this.images) {
-        console.log(image?.url);
-      }
     }
   }
 
