@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
 import { PageEvent } from '@angular/material/paginator';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 import { of } from 'rxjs';
 import { Images } from 'src/app/shared/interfaces/image.interface';
 import { FlickrService } from 'src/app/shared/services/flickr.service';
@@ -17,6 +19,9 @@ export class MainPageComponent implements OnInit {
   public size = 8;
   public keyword = new FormControl('');
   public tag = new FormControl('');
+  public isLoading?: boolean;
+  public mode: ProgressSpinnerMode = 'indeterminate';
+  public color: ThemePalette = 'primary';
 
   constructor(private flickrService: FlickrService) {}
 
@@ -25,10 +30,13 @@ export class MainPageComponent implements OnInit {
   search() {
     const value = this.keyword.value.toLowerCase().trim();
 
+    this.isLoading = true;
+
     if (value && value.length > 0) {
       this.flickrService.search(value).subscribe((res: any) => {
         this.images = res;
         this.getData({ pageIndex: this.page, pageSize: this.size });
+        this.isLoading = false;
       });
     }
   }

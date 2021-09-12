@@ -8,6 +8,7 @@ import { Images } from 'src/app/shared/interfaces/image.interface';
 })
 export class BookmarksComponent implements OnInit {
   public images: Images[] = [];
+  public isImages?: any;
 
   constructor() {}
 
@@ -16,11 +17,14 @@ export class BookmarksComponent implements OnInit {
 
     if (b !== null) {
       this.images = JSON.parse(b);
+      this.isImages = !!this.images.length;
     }
   }
 
   deleteImage(i: number) {
     this.images?.splice(i, 1);
+    this.isImages = !!this.images.length;
+
     localStorage.setItem('data', JSON.stringify(this.images));
   }
 }

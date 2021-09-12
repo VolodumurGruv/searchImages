@@ -1,4 +1,4 @@
-<div class="card-container">
+<div class="card-container" *ngIf="isImages; else noData">
   <mat-card class="example-card" *ngFor="let image of images; index as i">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
@@ -17,3 +17,8 @@
     </mat-card-actions>
   </mat-card>
 </div>
+<ng-template #noData>
+  <div class="no-data">
+    <p>Any bookmarks wasn't added</p>
+  </div>
+</ng-template>

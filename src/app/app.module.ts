@@ -14,6 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
+import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   declarations: [AppComponent, MainLayoutComponent],
@@ -30,6 +32,8 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatToolbarModule,
     MatListModule,
+    NgIdleKeepaliveModule.forRoot(),
+    MomentModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
