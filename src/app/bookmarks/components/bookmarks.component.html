@@ -5,7 +5,12 @@
       <mat-card-title>{{ image.title }}</mat-card-title>
       <mat-card-subtitle>Tag: {{ image.tag }}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="image.url" [alt]="image.title" />
+    <img
+      mat-card-image
+      class="card-image"
+      [src]="image.url"
+      [alt]="image.title"
+    />
 
     <mat-card-actions>
       <button mat-button (click)="deleteImage(i)">Delete</button>

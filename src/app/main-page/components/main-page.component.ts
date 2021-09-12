@@ -14,7 +14,7 @@ export class MainPageComponent implements OnInit {
   public images: Images[] = [];
   public data: Images[] = [];
   public page = 0;
-  public size = 6;
+  public size = 8;
   public keyword = new FormControl('');
   public tag = new FormControl('');
 
@@ -46,7 +46,11 @@ export class MainPageComponent implements OnInit {
           data.tag = this.tag.value;
         }
 
-        d.forEach((el: any) => dataStorage.push(el));
+        d.forEach((el: any) => {
+          if (el.url !== data.url) {
+            dataStorage.push(el);
+          }
+        });
 
         dataStorage.push(data);
 

@@ -13,12 +13,19 @@
 
 .example-card {
   max-width: 250px;
-  margin-bottom: 8px;
+  margin: 10px 10px 10px 10px;
 }
 
 .images {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  object-fit: cover;
+}
+
+.card-image {
+  margin: 0 auto 0 auto;
+  height: 150px;
+  width: 100%;
 }
